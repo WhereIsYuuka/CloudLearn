@@ -12,3 +12,17 @@ D:\Microsoft Visual Studio\c# code\Cloud_Learn\obj\Debug\net6.0\refint\Cloud_Lea
 D:\Microsoft Visual Studio\c# code\Cloud_Learn\obj\Debug\net6.0\Cloud_Learn.pdb
 D:\Microsoft Visual Studio\c# code\Cloud_Learn\obj\Debug\net6.0\Cloud_Learn.genruntimeconfig.cache
 D:\Microsoft Visual Studio\c# code\Cloud_Learn\obj\Debug\net6.0\ref\Cloud_Learn.dll
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\bin\Debug\net6.0\Cloud_Learn.exe
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\bin\Debug\net6.0\Cloud_Learn.deps.json
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\bin\Debug\net6.0\Cloud_Learn.runtimeconfig.json
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\bin\Debug\net6.0\Cloud_Learn.dll
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\bin\Debug\net6.0\Cloud_Learn.pdb
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\obj\Debug\net6.0\Cloud_Learn.GeneratedMSBuildEditorConfig.editorconfig
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\obj\Debug\net6.0\Cloud_Learn.AssemblyInfoInputs.cache
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\obj\Debug\net6.0\Cloud_Learn.AssemblyInfo.cs
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\obj\Debug\net6.0\Cloud_Learn.csproj.CoreCompileInputs.cache
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\obj\Debug\net6.0\Cloud_Learn.dll
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\obj\Debug\net6.0\refint\Cloud_Learn.dll
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\obj\Debug\net6.0\Cloud_Learn.pdb
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\obj\Debug\net6.0\Cloud_Learn.genruntimeconfig.cache
+E:\unity project\Cloud_Learn\CloudLearn\Cloud_Learn_Serves\obj\Debug\net6.0\ref\Cloud_Learn.dll

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Microsoft Visual Studio\\c# code\\Cloud_Learn\\Cloud_Learn.csproj",
+      "projectUniqueName": "E:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\Cloud_Learn.csproj",
       "projectName": "Cloud_Learn",
-      "projectPath": "D:\\Microsoft Visual Studio\\c# code\\Cloud_Learn\\Cloud_Learn.csproj",
+      "projectPath": "E:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\Cloud_Learn.csproj",
       "packagesPath": "C:\\Users\\Liu\\.nuget\\packages\\",
-      "outputPath": "D:\\Microsoft Visual Studio\\c# code\\Cloud_Learn\\obj\\",
+      "outputPath": "E:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
