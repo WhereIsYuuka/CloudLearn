@@ -5,11 +5,16 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Cloud_Learn
 {
     public class Serv
     {
+        //数据库
+        MySqlConnection sqlConn;
         //监听套接字
         public Socket listenfd;
         //客户端连接
@@ -42,6 +47,22 @@ namespace Cloud_Learn
 
         public void Start(String host, int port)
         {
+            //数据库
+            string connStr = "Database=my_database;Data Source=127.0.0.1;";
+            connStr += "User Id=root;Password=19820927l;port=3306";
+            //连接数据库
+            sqlConn = new MySqlConnection(connStr);
+            try
+            {
+                //打开数据库
+                sqlConn.Open();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("[数据库]连接失败" + e.Message);
+                return;
+            }
+
             //初始化连接池 
             conns = new Conn[maxConn];
             for(int i = 0; i < maxConn; i++)
@@ -110,22 +131,24 @@ namespace Cloud_Learn
                 }
                 //数据处理
                 string str = System.Text.Encoding.UTF8.GetString(conn.readBuff, 0, count);
-                Console.WriteLine("[服务器接收]" + str);
-                //Send
-                byte[] bytes = System.Text.Encoding.Default.GetBytes("你好，客户端" + str);
-                for(int i = 0; i < conns.Length; i++)
-                {
-                    if (conns[i] == null)
-                    {
-                        continue;
-                    }
-                    if (!conns[i].isUse)
-                    {
-                        continue;
-                    }
-                    Console.WriteLine("[服务器发送]" + str);
-                    conns[i].socket.Send(bytes);
-                }
+                Console.WriteLine("受到[" + conn.GetAddress + "] 数据: " + str);
+                //处理消息
+                HandleMsg(conn, str);
+                // //Send
+                // byte[] bytes = System.Text.Encoding.Default.GetBytes("你好，客户端" + str);
+                // for(int i = 0; i < conns.Length; i++)
+                // {
+                //     if (conns[i] == null)
+                //     {
+                //         continue;
+                //     }
+                //     if (!conns[i].isUse)
+                //     {
+                //         continue;
+                //     }
+                //     Console.WriteLine("[服务器发送]" + str);
+                //     conns[i].socket.Send(bytes);
+                // }
                 //继续接收
                 conn.socket.BeginReceive(conn.readBuff, conn.buffCount, conn.BuffRemain(), SocketFlags.None, ReceiveCb, conn);
             }
@@ -133,6 +156,57 @@ namespace Cloud_Learn
             {
                 Console.WriteLine("[错误]ReceiveCb失败" + e.Message);
                 conn.Close();
+            }
+        }
+
+        public void HandleMsg(Conn conn, string str)
+        {
+            //获取数据
+            if(str == "_GET")
+            {
+                string cmdStr = "select * from msg";
+                //查询
+                MySqlCommand cmd = new MySqlCommand(cmdStr, sqlConn);
+                try
+                {
+                    //执行查询
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    str = "";
+                    //读取数据
+                    while(dataReader.Read())
+                    {
+                        //读取一行数据
+                        str += dataReader["id"] + ":" + dataReader["msg"] + "\n\r";
+                    }
+                    //关闭
+                    dataReader.Close();
+                    //发送
+                    byte[] bytes = System.Text.Encoding.Default.GetBytes(str);
+                    //发送数据
+                    conn.socket.Send(bytes);    
+                }
+                catch (System.Exception e)
+                {
+                    Console.WriteLine("[数据库]查询失败" + e.Message);
+                }
+            }
+
+            else
+            {
+                //插入数据
+                string cmdStrFormat = "insert into msg set name = '{0}', msg = '{1}'";
+                string cmdStr = string.Format(cmdStrFormat, conn.GetAddress, str);
+                MySqlCommand cmd = new MySqlCommand(cmdStr, sqlConn);
+                try
+                {
+                    //执行插入
+                    cmd.ExecuteNonQuery();
+                }
+                catch (System.Exception e)
+                {
+                    Console.WriteLine("[数据库]插入失败" + e.Message);
+                    throw;
+                }
             }
         }
     }
