@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\Cloud_Learn.csproj": {}
+    "e:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\Cloud_Learn.csproj": {}
   },
   "projects": {
-    "E:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\Cloud_Learn.csproj": {
+    "e:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\Cloud_Learn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\Cloud_Learn.csproj",
+        "projectUniqueName": "e:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\Cloud_Learn.csproj",
         "projectName": "Cloud_Learn",
-        "projectPath": "E:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\Cloud_Learn.csproj",
+        "projectPath": "e:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\Cloud_Learn.csproj",
         "packagesPath": "C:\\Users\\Liu\\.nuget\\packages\\",
-        "outputPath": "E:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\obj\\",
+        "outputPath": "e:\\unity project\\Cloud_Learn\\CloudLearn\\Cloud_Learn_Serves\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
